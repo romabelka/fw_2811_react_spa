@@ -1,17 +1,27 @@
 import React, {Component} from 'react'
-import Article from './article'
+import Article from './Article'
 
-const article = {
+const articlesData = [
+  {
     title: 'title',
     text: 'some text'
-}
+  },
+  {
+    title: 'title2',
+    text: 'some text 2'
+  }
+]
 
 class App extends Component {
   render(){
+    const articles = articlesData.map((article) => {
+      return <li key={article.title}><Article article = {article}/></li>
+    })
+
     return(
       <div>
         <h1>React App</h1>
-        <Article article={article}/>
+        {articles}
       </div>
     )
   }
