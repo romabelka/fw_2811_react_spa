@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
+import Article from './components/Article'
 
 const article = {
   title: 'Some title',
@@ -16,20 +17,5 @@ class App extends Component {
     )
   }
 }
-
-class Article extends Component {
-  render(){
-    const {article} = this.props
-    return(
-      <div>
-        <h2>{article.title}</h2>
-        <section>
-          {article.text}
-        </section>
-      </div>
-    )
-  }
-}
-
 
 ReactDOM.render(<App/>, document.getElementById("container"));
