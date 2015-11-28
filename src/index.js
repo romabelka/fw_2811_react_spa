@@ -1,12 +1,17 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 
+const article = {
+  title: 'Some title',
+  text: 'Article body text'
+}
+
 class App extends Component {
   render(){
     return(
       <div>
         <h1>React App</h1>
-        <Article />
+        <Article article={article}/>
       </div>
     )
   }
@@ -14,14 +19,12 @@ class App extends Component {
 
 class Article extends Component {
   render(){
+    const {article} = this.props
     return(
       <div>
-        <h2>Article Title</h2>
-        <div>
-          Author
-        </div>
+        <h2>{article.title}</h2>
         <section>
-          Article Text
+          {article.text}
         </section>
       </div>
     )
